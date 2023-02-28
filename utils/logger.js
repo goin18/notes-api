@@ -7,7 +7,10 @@ const info = (...params) => {
 
 const error = (...params) => {
     if (process.env.NODE_ENV != 'test') {
-        console.log('ERROR');
+        console.log('ERROR - production!');
+        console.log(...params);
+    } else {
+        console.log('Error test!');
         console.log(...params);
     }
 }
